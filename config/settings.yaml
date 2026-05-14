@@ -1,0 +1,23 @@
+paths:
+
+  bronze: "data/1_bronze"
+
+  silver: "data/2_silver"
+
+  gold: "data/3_gold"
+
+database:
+
+  db_file: "data/3_gold/warehouse.duckdb"
+
+api:
+
+  transaction_api: "http://localhost:5000/api/transactions"
+
+pipeline:
+
+  batch_size: 10
+
+logging:
+
+  level: "INFO"

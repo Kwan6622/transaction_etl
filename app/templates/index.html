@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Banking System</title>
+</head>
+<body>
+
+    <h1>Mock Banking Transaction System</h1>
+
+    <p>
+        Total Transactions:
+        <span id="transaction-counter">{{ transaction_count }}</span> <!-- Added a span with an ID here -->
+    </p>
+
+    <button onclick="createTransaction()">
+        Create Transaction
+    </button>
+
+    <p id="result"></p>
+
+    <script>
+        async function createTransaction() {
+            const response = await fetch("/create_transaction");
+            const data = await response.json();
+            
+            // Update the counter on the page dynamically
+            document.getElementById("transaction-counter").innerText = data.total_count;
+            
+            document.getElementById("result").innerHTML = JSON.stringify(
+                data,
+                null,
+                2
+            );
+        }
+    </script>
+
+</body>
+</html>

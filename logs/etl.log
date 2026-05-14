@@ -1,0 +1,9 @@
+2026-05-14 16:03:49 | INFO | Collected API data into bronze: data/1_bronze/transactions_20260514_160349.json
+2026-05-14 16:03:49 | INFO | Silver parquet saved: data/2_silver/transactions.parquet
+2026-05-14 16:04:05 | INFO | Collected API data into bronze: data/1_bronze/transactions_20260514_160405.json
+2026-05-14 16:04:05 | INFO | Silver parquet saved: data/2_silver/transactions.parquet
+2026-05-14 16:04:05 | INFO | Connected to DuckDB at data/3_gold/warehouse.duckdb
+2026-05-14 16:04:05 | INFO | Loaded 'gold_transactions' table (contains transaction_id & username).
+2026-05-14 16:04:05 | INFO | Loaded 'gold_status_summary' table.
+2026-05-14 16:04:05 | INFO | Gold layer processing complete.
+2026-05-14 16:04:05 | INFO | Loaded gold layer into DuckDB warehouse
