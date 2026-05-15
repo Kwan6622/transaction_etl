@@ -1,0 +1,10 @@
+faker
+pandas
+duckdb
+pyarrow
+pyyaml
+python-dotenv
+loguru
+pytest
+flask
+requests

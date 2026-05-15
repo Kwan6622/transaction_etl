@@ -47,6 +47,9 @@ def transform_to_silver():
         f"{SILVER_PATH}/transactions.parquet"
     )
 
+    from pathlib import Path
+    Path(SILVER_PATH).mkdir(parents=True, exist_ok=True)
+
     df.to_parquet(
         output_file,
         index=False

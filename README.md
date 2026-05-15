@@ -302,9 +302,10 @@ Planned upgrades:
 - Docker containerization
 - Apache Airflow orchestration
 - Kafka streaming ingestion
-- PostgreSQL warehouse
+- Cloud Data Warehouse (Snowflake/BigQuery)
 - dbt transformations
 - Great Expectations data quality checks
+- Multi-currency conversion support
 - CI/CD pipeline
 - Cloud deployment (AWS/GCP/Azure)
 - Dashboard visualization
@@ -324,5 +325,7 @@ DuckDB was chosen because it:
 ---
 
 # Author
+
+Quang Nguyen Duy
 
 Built as a portfolio Data Engineering project focused on modern Lakehouse architecture and real-world ETL workflows.

@@ -24,6 +24,9 @@ def create_gold_tables():
 
     # 2. Save the Detailed Table (Fact Table) to Gold
     transactions_gold_file = f"{GOLD_PATH}/gold_transactions.parquet"
+
+    from pathlib import Path
+    Path(GOLD_PATH).mkdir(parents=True, exist_ok=True)
     df.to_parquet(transactions_gold_file, index=False)
     logger.info(f"Saved 'gold_transactions' to {transactions_gold_file}")
 
