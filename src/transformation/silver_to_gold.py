@@ -1,6 +1,5 @@
 import pandas as pd
 import yaml
-import duckdb
 from src.utils.logger import logger
 
 # Load Configuration
@@ -8,7 +7,7 @@ with open("config/settings.yaml") as file:
     config = yaml.safe_load(file)
 
 SILVER_PATH = config["paths"]["silver"]
-DUCKDB_PATH = config["database"]["db_file"]
+GOLD_PATH = config["paths"]["gold"]
 
 def create_gold_tables():
     # 1. Read the clean data from Silver
@@ -23,27 +22,22 @@ def create_gold_tables():
         logger.info("No data found to transform.")
         return
 
-    # 2. Connect to the persistent DuckDB file
-    conn = duckdb.connect(DUCKDB_PATH)
-    logger.info(f"Connected to DuckDB at {DUCKDB_PATH}")
+    # 2. Save the Detailed Table (Fact Table) to Gold
+    transactions_gold_file = f"{GOLD_PATH}/gold_transactions.parquet"
+    df.to_parquet(transactions_gold_file, index=False)
+    logger.info(f"Saved 'gold_transactions' to {transactions_gold_file}")
 
-    # 3. Create the Detailed Table (Fact Table)
-    conn.sql("CREATE OR REPLACE TABLE gold_transactions AS SELECT * FROM df")
-    logger.info("Loaded 'gold_transactions' table (contains transaction_id & username).")
-
-    # 4. Create the Summary Table
-    # Recreate your grouping logic
+    # 3. Create the Summary Table and save to Gold
     gold_summary_df = (
         df.groupby("status")["amount"]
         .sum()
         .reset_index()
     )
     
-    conn.sql("CREATE OR REPLACE TABLE gold_status_summary AS SELECT * FROM gold_summary_df")
-    logger.info("Loaded 'gold_status_summary' table.")
+    summary_gold_file = f"{GOLD_PATH}/gold_status_summary.parquet"
+    gold_summary_df.to_parquet(summary_gold_file, index=False)
+    logger.info(f"Saved 'gold_status_summary' to {summary_gold_file}")
 
-    # 5. Close connection
-    conn.close()
     logger.info("Gold layer processing complete.")
 
 if __name__ == "__main__":

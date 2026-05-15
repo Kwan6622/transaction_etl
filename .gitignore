@@ -2,7 +2,7 @@
 *.db
 
 # Log files
-*.txt
+*.log
 
 # Python cache
 __pycache__/
@@ -11,3 +11,7 @@ __pycache__/
 # Virtual environments
 venv/
 .env
+
+*.json
+
+*.txt

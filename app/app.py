@@ -18,6 +18,7 @@ def generate_transaction():
 
     transaction = {
         "transaction_id": str(uuid.uuid4()),
+        "timestamp": datetime.now().isoformat(),
         "customer_name": fake.name(),
         "amount": round(
             random.uniform(10, 5000),
@@ -26,8 +27,8 @@ def generate_transaction():
         "currency": "USD",
         "status": random.choice(
             ["SUCCESS", "FAILED", "PENDING"]
-        ),
-        "timestamp": datetime.now().isoformat()
+        )
+        
     }
 
     transactions.append(transaction)

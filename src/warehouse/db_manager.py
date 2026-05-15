@@ -13,18 +13,27 @@ def load_gold_to_warehouse():
 
     conn = duckdb.connect(DB_FILE)
 
+    # Load gold_transactions
     conn.execute(f"""
         CREATE OR REPLACE TABLE
-        transaction_summary AS
+        gold_transactions AS
         SELECT *
         FROM read_parquet(
-            '{GOLD_PATH}/transaction_summary.parquet'
+            '{GOLD_PATH}/gold_transactions.parquet'
         )
     """)
+    logger.info("Loaded 'gold_transactions' into DuckDB warehouse.")
 
-    logger.info(
-        "Loaded gold layer into DuckDB warehouse"
-    )
+    # Load gold_status_summary
+    conn.execute(f"""
+        CREATE OR REPLACE TABLE
+        gold_status_summary AS
+        SELECT *
+        FROM read_parquet(
+            '{GOLD_PATH}/gold_status_summary.parquet'
+        )
+    """)
+    logger.info("Loaded 'gold_status_summary' into DuckDB warehouse.")
 
     conn.close()
 
