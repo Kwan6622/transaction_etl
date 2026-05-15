@@ -16,8 +16,8 @@ def test_transform_to_silver_empty(mock_to_parquet, mock_glob):
     mock_to_parquet.assert_not_called()
 
 @patch("src.transformation.silver_to_gold.pd.read_parquet")
-@patch("src.transformation.silver_to_gold.duckdb.connect")
-def test_create_gold_tables(mock_connect, mock_read_parquet):
+@patch("src.transformation.silver_to_gold.pd.DataFrame.to_parquet")
+def test_create_gold_tables(mock_to_parquet, mock_read_parquet):
     # Test business aggregation logic
     mock_df = pd.DataFrame({
         "status": ["SUCCESS", "SUCCESS", "FAILED"],
@@ -25,16 +25,10 @@ def test_create_gold_tables(mock_connect, mock_read_parquet):
     })
     mock_read_parquet.return_value = mock_df
     
-    mock_conn = MagicMock()
-    mock_connect.return_value = mock_conn
-    
     create_gold_tables()
     
-    # Check that duckdb.connect was called
-    assert mock_connect.called
+    # Check that pd.read_parquet was called
+    assert mock_read_parquet.called
     
-    # Check that sql commands were executed
-    assert mock_conn.sql.call_count == 2
-    
-    # Check that connection was closed
-    assert mock_conn.close.called
+    # Check that to_parquet commands were executed (one for details, one for summary)
+    assert mock_to_parquet.call_count == 2
