@@ -1,11 +1,8 @@
 import pandas as pd
-import yaml
+from src.utils.config import config
 from src.utils.logger import logger
 
 # Load Configuration
-with open("config/settings.yaml") as file:
-    config = yaml.safe_load(file)
-
 SILVER_PATH = config["paths"]["silver"]
 GOLD_PATH = config["paths"]["gold"]
 

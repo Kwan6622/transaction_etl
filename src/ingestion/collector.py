@@ -2,12 +2,9 @@ import requests
 import json
 from datetime import datetime
 from pathlib import Path
-import yaml
 
+from src.utils.config import config
 from src.utils.logger import logger
-
-with open("config/settings.yaml") as file:
-    config = yaml.safe_load(file)
 
 BRONZE_PATH = config["paths"]["bronze"]
 

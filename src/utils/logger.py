@@ -2,11 +2,9 @@ from loguru import logger
 import sys
 import time
 from contextlib import contextmanager
-import yaml
+from src.utils.config import config, PROJECT_ROOT
 
 # Load the logging level from settings.yaml
-with open("config/settings.yaml") as file:
-    config = yaml.safe_load(file)
 LOG_LEVEL = config.get("logging", {}).get("level", "INFO")
 
 logger.remove()
@@ -18,7 +16,7 @@ logger.add(
         )
 
 logger.add(
-        "logs/etl.log",
+        str(PROJECT_ROOT / "logs" / "etl.log"),
         rotation="5 MB",
         format='{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}',
         level=LOG_LEVEL

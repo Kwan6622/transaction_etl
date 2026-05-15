@@ -1,10 +1,7 @@
 import duckdb
-import yaml
 
+from src.utils.config import config
 from src.utils.logger import logger
-
-with open("config/settings.yaml") as file:
-    config = yaml.safe_load(file)
 
 DB_FILE = config["database"]["db_file"]
 GOLD_PATH = config["paths"]["gold"]

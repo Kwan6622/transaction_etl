@@ -13,3 +13,55 @@
 2026-05-15 14:31:44 | INFO | Loaded 'gold_transactions' into DuckDB warehouse.
 2026-05-15 14:31:44 | INFO | Loaded 'gold_status_summary' into DuckDB warehouse.
 2026-05-15 14:31:44 | INFO | Completed action: Load Gold to Warehouse | Duration: 0.03 seconds
+2026-05-15 15:21:12 | INFO | No data found to transform.
+2026-05-15 15:21:12 | INFO | Saved 'gold_transactions' to data/3_gold/gold_transactions.parquet
+2026-05-15 15:21:12 | INFO | Saved 'gold_status_summary' to data/3_gold/gold_status_summary.parquet
+2026-05-15 15:21:12 | INFO | Gold layer processing complete.
+2026-05-15 15:23:19 | INFO | Starting action: Data Collection
+2026-05-15 15:23:21 | INFO | Collected API data into bronze: data/1_bronze/transactions_20260515_152321.json
+2026-05-15 15:23:21 | INFO | Completed action: Data Collection | Duration: 2.05 seconds
+2026-05-15 15:23:21 | INFO | Starting action: Transform Bronze to Silver
+2026-05-15 15:23:21 | INFO | Silver parquet saved: data/2_silver/transactions.parquet
+2026-05-15 15:23:21 | INFO | Completed action: Transform Bronze to Silver | Duration: 0.01 seconds
+2026-05-15 15:23:21 | INFO | Starting action: Create Gold Tables
+2026-05-15 15:23:21 | INFO | Saved 'gold_transactions' to data/3_gold/gold_transactions.parquet
+2026-05-15 15:23:21 | INFO | Saved 'gold_status_summary' to data/3_gold/gold_status_summary.parquet
+2026-05-15 15:23:21 | INFO | Gold layer processing complete.
+2026-05-15 15:23:21 | INFO | Completed action: Create Gold Tables | Duration: 0.02 seconds
+2026-05-15 15:23:21 | INFO | Starting action: Load Gold to Warehouse
+2026-05-15 15:23:21 | INFO | Loaded 'gold_transactions' into DuckDB warehouse.
+2026-05-15 15:23:21 | INFO | Loaded 'gold_status_summary' into DuckDB warehouse.
+2026-05-15 15:23:21 | INFO | Completed action: Load Gold to Warehouse | Duration: 0.04 seconds
+2026-05-15 15:23:28 | INFO | No data found to transform.
+2026-05-15 15:23:28 | INFO | Saved 'gold_transactions' to data/3_gold/gold_transactions.parquet
+2026-05-15 15:23:28 | INFO | Saved 'gold_status_summary' to data/3_gold/gold_status_summary.parquet
+2026-05-15 15:23:28 | INFO | Gold layer processing complete.
+2026-05-15 15:26:43 | INFO | No data found to transform.
+2026-05-15 15:26:43 | INFO | Saved 'gold_transactions' to D:\_code\data_engineer\cv_project1\data\3_gold/gold_transactions.parquet
+2026-05-15 15:26:43 | INFO | Saved 'gold_status_summary' to D:\_code\data_engineer\cv_project1\data\3_gold/gold_status_summary.parquet
+2026-05-15 15:26:43 | INFO | Gold layer processing complete.
+2026-05-15 15:27:21 | INFO | No data found to transform.
+2026-05-15 15:27:21 | INFO | Saved 'gold_transactions' to D:\_code\data_engineer\cv_project1\data\3_gold/gold_transactions.parquet
+2026-05-15 15:27:21 | INFO | Saved 'gold_status_summary' to D:\_code\data_engineer\cv_project1\data\3_gold/gold_status_summary.parquet
+2026-05-15 15:27:21 | INFO | Gold layer processing complete.
+2026-05-15 15:27:34 | INFO | Starting action: Data Collection
+2026-05-15 15:27:38 | INFO | Completed action: Data Collection | Duration: 4.06 seconds
+2026-05-15 15:27:51 | INFO | Starting action: Data Collection
+2026-05-15 15:27:53 | INFO | Collected API data into bronze: D:\_code\data_engineer\cv_project1\data\1_bronze/transactions_20260515_152753.json
+2026-05-15 15:27:53 | INFO | Completed action: Data Collection | Duration: 2.05 seconds
+2026-05-15 15:27:53 | INFO | Starting action: Transform Bronze to Silver
+2026-05-15 15:27:53 | INFO | Silver parquet saved: D:\_code\data_engineer\cv_project1\data\2_silver/transactions.parquet
+2026-05-15 15:27:53 | INFO | Completed action: Transform Bronze to Silver | Duration: 0.01 seconds
+2026-05-15 15:27:53 | INFO | Starting action: Create Gold Tables
+2026-05-15 15:27:53 | INFO | Saved 'gold_transactions' to D:\_code\data_engineer\cv_project1\data\3_gold/gold_transactions.parquet
+2026-05-15 15:27:53 | INFO | Saved 'gold_status_summary' to D:\_code\data_engineer\cv_project1\data\3_gold/gold_status_summary.parquet
+2026-05-15 15:27:53 | INFO | Gold layer processing complete.
+2026-05-15 15:27:53 | INFO | Completed action: Create Gold Tables | Duration: 0.02 seconds
+2026-05-15 15:27:53 | INFO | Starting action: Load Gold to Warehouse
+2026-05-15 15:27:53 | INFO | Loaded 'gold_transactions' into DuckDB warehouse.
+2026-05-15 15:27:53 | INFO | Loaded 'gold_status_summary' into DuckDB warehouse.
+2026-05-15 15:27:53 | INFO | Completed action: Load Gold to Warehouse | Duration: 0.04 seconds
+2026-05-15 15:28:04 | INFO | No data found to transform.
+2026-05-15 15:28:04 | INFO | Saved 'gold_transactions' to D:\_code\data_engineer\cv_project1\data\3_gold/gold_transactions.parquet
+2026-05-15 15:28:04 | INFO | Saved 'gold_status_summary' to D:\_code\data_engineer\cv_project1\data\3_gold/gold_status_summary.parquet
+2026-05-15 15:28:04 | INFO | Gold layer processing complete.
