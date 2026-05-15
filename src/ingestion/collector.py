@@ -8,9 +8,7 @@ from src.utils.logger import logger
 
 BRONZE_PATH = config["paths"]["bronze"]
 
-API_URL = (
-    "http://localhost:5000/api/transactions"
-)
+API_URL = config["api"]["transaction_api"]
 
 def collect_data():
 

@@ -1,5 +1,5 @@
 # Database files
-*.db
+*.duckdb
 
 # Log files
 *.log
